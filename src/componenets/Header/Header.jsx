@@ -1,5 +1,5 @@
 import { BsCoin } from "react-icons/bs";
-const Header = () => {
+const Header = ({ coins }) => {
     return (
         <div className="navbar bg-base-100 shadow-sm flex justify-between items-center px-10">
             <div>
@@ -10,7 +10,7 @@ const Header = () => {
                 <a href=""><u>Fixture</u></a>
                 <a href=""><u>Teams</u></a>
                 <a href=""><u>Schedule</u></a>
-                <button className="border-2 px-5 py-3 rounded-2xl border-[#e7fe29] flex justify-center items-center gap-2"><span>100000</span> Coin <BsCoin /></button>
+                <button className="border-2 px-5 py-3 rounded-2xl border-[#e7fe29] flex justify-center items-center gap-2"><span>{coins}</span> Coin <BsCoin /></button>
             </div>
         </div>
     );

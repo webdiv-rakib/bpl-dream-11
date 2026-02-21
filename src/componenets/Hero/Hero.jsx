@@ -1,5 +1,6 @@
 import '../Hero/Hero.css'
-const Hero = () => {
+const Hero = ({ handleFreeCredit, claimCount }) => {
+    const isLimitReached = claimCount >= 3;
     return (
         <div className='hero-bg flex flex-col justify-center items-center space-y-8'>
             <div>
@@ -9,7 +10,7 @@ const Hero = () => {
                 <h1 className='text-4xl font-bold'>Assemble Your Ultimate Dream 11 Cricket Team</h1>
                 <h3 className='text-xl'>Beyond Boundaries Beyond Limits</h3>
                 <div className='p-2 border-2 max-w-fit rounded-2xl border-[#e7fe29]'>
-                    <button className='btn rounded-2xl bg-[#e7fe29] text-black'>Claim Free Credit</button>
+                    <button className={`btn rounded-2xl text-black ${isLimitReached ? 'bg-gray-400 cursor-not-allowed' : 'bg-[#e7fe29]'}`} onClick={handleFreeCredit} disabled={isLimitReached}>Claim Free Credit</button>
                 </div>
             </div>
         </div>
