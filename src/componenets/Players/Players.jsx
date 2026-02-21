@@ -18,7 +18,7 @@ const Players = () => {
                     <button className='btn rounded-r-2xl border-[#e7fe29]'>Selected: </button>
                 </div>
             </div>
-            <div className='grid grid-cols-4 justify-center items-center mx-auto'>
+            <div className='grid grid-cols-4 justify-self-center mt-10 gap-10'>
                 {
                     players.map(player => <Player
                         player={player}
