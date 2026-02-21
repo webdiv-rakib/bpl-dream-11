@@ -1,14 +1,30 @@
-import React from 'react';
-
+import React, { useEffect, useState } from 'react';
+import Player from '../Player/Player';
 const Players = () => {
+    const [players, setPlayers] = useState([])
+    useEffect(() => {
+        fetch('players.json')
+            .then(res => res.json())
+            .then(data => setPlayers(data))
+    }, [])
     return (
-        <div className='flex justify-between items-center px-10 mt-5'>
-            <div>
-                <h3 className='text-xl font-bold'>Available Players</h3>
+        <div>
+            <div className='flex justify-between items-center px-10 mt-5'>
+                <div>
+                    <h3 className='text-xl font-bold'>Available Players: {players.length}</h3>
+                </div>
+                <div>
+                    <button className='btn rounded-l-2xl border-[#e7fe29]'>Available: </button>
+                    <button className='btn rounded-r-2xl border-[#e7fe29]'>Selected: </button>
+                </div>
             </div>
-            <div>
-                <button className='btn rounded-l-2xl border-[#e7fe29]'>Available: </button>
-                <button className='btn rounded-r-2xl border-[#e7fe29]'>Selected: </button>
+            <div className='grid grid-cols-4 justify-center items-center mx-auto'>
+                {
+                    players.map(player => <Player
+                        player={player}
+                        key={player.id}
+                    ></Player>)
+                }
             </div>
         </div>
     );
