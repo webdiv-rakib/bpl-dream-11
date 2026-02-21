@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Player from '../Player/Player';
-const Players = () => {
+const Players = ({ handleChoosePlayer, selectedCount }) => {
     const [players, setPlayers] = useState([])
     useEffect(() => {
         fetch('players.json')
@@ -15,7 +15,7 @@ const Players = () => {
                 </div>
                 <div>
                     <button className='btn rounded-l-2xl border-[#e7fe29]'>Available: </button>
-                    <button className='btn rounded-r-2xl border-[#e7fe29]'>Selected: </button>
+                    <button className='btn rounded-r-2xl border-[#e7fe29]'>Selected: ({selectedCount})</button>
                 </div>
             </div>
             <div className='grid grid-cols-4 justify-self-center mt-10 gap-10'>
@@ -23,6 +23,7 @@ const Players = () => {
                     players.map(player => <Player
                         player={player}
                         key={player.id}
+                        handleChoosePlayer={handleChoosePlayer}
                     ></Player>)
                 }
             </div>

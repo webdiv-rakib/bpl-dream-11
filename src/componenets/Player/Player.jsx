@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Player = ({ player }) => {
+const Player = ({ player, handleChoosePlayer }) => {
     const { name, country, bpl_price, player_image, player_type, country_image, batting_hand, bowling_hand, rating } = player
     return (
         <div>
@@ -36,7 +36,7 @@ const Player = ({ player }) => {
                     </div>
                     <div className="flex justify-between items-center">
                         <h4>Price: {bpl_price}</h4>
-                        <button className="btn rounded-3xl">Choose Player</button>
+                        <button className="btn rounded-3xl" onClick={() => handleChoosePlayer(player)}>Choose Player</button>
                     </div>
                 </div>
             </div>
