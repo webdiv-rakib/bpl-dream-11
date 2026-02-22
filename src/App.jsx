@@ -3,6 +3,7 @@ import './App.css'
 import Header from './componenets/Header/Header'
 import Hero from './componenets/Hero/Hero'
 import Players from './componenets/Players/Players'
+import Footer from './componenets/Footer/Footer'
 
 function App() {
   // state handle for coins
@@ -80,8 +81,10 @@ function App() {
         handleChoosePlayer={handleChoosePlayer}
         selectedCount={selectedPlayers.length}
         selectedPlayers={selectedPlayers}
-      handleRemovePlayer={handleRemovePlayer}
+        handleRemovePlayer={handleRemovePlayer}
       ></Players>
+
+      <Footer></Footer>
     </>
   )
 }

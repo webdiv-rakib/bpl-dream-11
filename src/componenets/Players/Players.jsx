@@ -40,7 +40,7 @@ const Players = ({ handleChoosePlayer, selectedCount, selectedPlayers, handleRem
                         onClick={() => handleIsActiveState('selected')}>Selected ({selectedCount})</button>
                 </div>
             </div>
-
+           
             {/* CONDITIONAL RENDERING STARTS HERE */}
             {isActive.available ? (
                 // AVAILABLE GRID VIEW
@@ -66,7 +66,7 @@ const Players = ({ handleChoosePlayer, selectedCount, selectedPlayers, handleRem
                                     <p className="font-semibold text-orange-500">{player.bpl_price}</p>
                                 </div>
                             </div>
-                            <button 
+                            <button
                                 onClick={() => handleRemovePlayer(player.player_id)}
                                 className="btn btn-ghost text-red-500 text-2xl"
                             >
@@ -74,8 +74,8 @@ const Players = ({ handleChoosePlayer, selectedCount, selectedPlayers, handleRem
                             </button>
                         </div>
                     ))}
-                    <button 
-                        onClick={() => handleIsActiveState('available')} 
+                    <button
+                        onClick={() => handleIsActiveState('available')}
                         className="btn bg-[#e7fe29] font-bold mt-4 text-black rounded-2xl"
                     >
                         Add More Player
