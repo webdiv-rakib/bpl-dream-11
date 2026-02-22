@@ -31,14 +31,27 @@ function App() {
   };
 
   const handleChoosePlayer = player => {
-    const isExist = selectedPlayers.find((p) => p.id === player.id);
+    const isExist = selectedPlayers.find((p) => p.player_id === player.player_id);
+    const numericPrice = Number(player.bpl_price.replace(/[^0-9.-]+/g, ""));
+
     if (isExist) {
       alert('Player already selected')
+    }
+    else if (coins < numericPrice) {
+      alert('Not Enough coins to buy this player')
+    }
+    else if (selectedPlayers.length >= 6) {
+      alert('Team is full! Maximum 6 players allowed')
     }
     else {
       const newSelectedPlayers = [...selectedPlayers, player];
       setSelectedPlayers(newSelectedPlayers);
-      console.log('Team Size: ', newSelectedPlayers.length)
+
+      // 3. Deduct the numeric price from your total coins
+      setCoins(prevCoin => prevCoin - numericPrice);
+
+      console.log('Team Size: ', newSelectedPlayers.length);
+
     }
   }
 
