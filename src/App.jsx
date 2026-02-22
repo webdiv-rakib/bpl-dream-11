@@ -55,6 +55,11 @@ function App() {
     }
   }
 
+  const handleRemovePlayer = id => {
+    const remainingPlayers = selectedPlayers.filter(p => p.player_id !== id);
+    setSelectedPlayers(remainingPlayers);
+  }
+
   return (
     <>
       <Header coins={coins}></Header>
@@ -74,6 +79,8 @@ function App() {
       <Players
         handleChoosePlayer={handleChoosePlayer}
         selectedCount={selectedPlayers.length}
+        selectedPlayers={selectedPlayers}
+      handleRemovePlayer={handleRemovePlayer}
       ></Players>
     </>
   )
