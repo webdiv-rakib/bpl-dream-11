@@ -23,27 +23,26 @@ const Footer = () => {
                 <div>
                     <img className='w-36 mt-60' src="../../../src/assets/logo.png" alt="" />
                 </div>
-                <footer className="footer sm:footer-horizontal bg-base-200 text-base-content p-10 grid grid-cols-3 justify-self-center">
-                    <nav className='text-left'>
+                <footer className="footer sm:footer-horizontal bg-base-200 p-10 flex justify-center items-center gap-20">
+                    <nav className='text-left w-1/3'>
                         <h6 className="footer-title">About Us</h6>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At dicta eos voluptatibus porro praesentium inventore ipsam suscipit et. Quidem, eligendi.</p>
                     </nav>
-                    <nav>
+                    <nav className='w-1/3'>
                         <h6 className="footer-title">Quick Links</h6>
                         <a className="link link-hover">About us</a>
                         <a className="link link-hover">Contact</a>
                         <a className="link link-hover">Jobs</a>
                         <a className="link link-hover">Press kit</a>
                     </nav>
-                    <form>
+                    <form className='w-1/3'>
                         <h6 className="footer-title">Subscribe</h6>
-                        <fieldset className="w-80">
-                            <label>Enter your email address</label>
+                        <fieldset className="">
                             <div className="join">
                                 <input
                                     type="text"
                                     placeholder="username@site.com"
-                                    className="input input-bordered join-item" />
+                                    className="input input-bordered join-item text-left" />
                                 <button className="btn btn-primary join-item">Subscribe</button>
                             </div>
                         </fieldset>

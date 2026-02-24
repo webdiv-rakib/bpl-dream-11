@@ -55,7 +55,7 @@ const Players = ({ handleChoosePlayer, selectedCount, selectedPlayers, handleRem
                 </div>
             ) : (
                 // SELECTED LIST VIEW
-                <div className="space-y-4">
+                <div className="space-y-4 mb-50">
                     {selectedPlayers.map(player => (
                         <div key={player.player_id} className="flex justify-between items-center p-4 border rounded-2xl shadow-sm">
                             <div className="flex items-center gap-4">
