@@ -1,0 +1,8 @@
+.footer-bg{
+    background-image: url(../../assets/bg-shadow.png);
+    height: 50%;
+    width: 50%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
